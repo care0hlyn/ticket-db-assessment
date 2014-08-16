@@ -29,4 +29,9 @@ class Customer
 		@name = new_name
 		DB.exec("UPDATE customers SET name = '#{new_name}' WHERE id = #{@id};")
 	end
+
+	def delete()
+		DB.exec("DELETE FROM customers WHERE id = #{@id};")
+	end
+
 end
