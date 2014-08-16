@@ -5,6 +5,6 @@ KITCHEN TICKET - FOOD ORDER
 
 Ruby app that tracks customers and their food orders so the kitchen can keep track of everything. 
 
-![Alt text](https://github.com/care0hlyn/ticket-db-assessment/blob/master/DB_schema.pngg)
+![Alt text](https://github.com/care0hlyn/ticket-db-assessment/blob/master/DB_schema.png)
 
 MIT LICENSE
