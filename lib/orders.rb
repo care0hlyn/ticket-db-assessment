@@ -1,5 +1,3 @@
-require 'pry'
-
 class Order
 
 	attr_reader :id, :customer_id, :food_order
@@ -28,7 +26,6 @@ class Order
 	def save
 		results = DB.exec("INSERT INTO orders (customer_id, food_order) VALUES (#{@customer_id}, '#{@food_order}') RETURNING id;")
 		@id = results.first['id'].to_i
-		# binding.pry
 	end
 
 	def update_order(new_order)
@@ -36,7 +33,7 @@ class Order
 		DB.exec("UPDATE orders SET food_order = '#{@food_order}' WHERE id = #{@id};")
 	end
 
-	def delete()
+	def delete
 		DB.exec("DELETE FROM orders WHERE id = #{@id};")
 	end
 

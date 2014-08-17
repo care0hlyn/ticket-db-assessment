@@ -30,7 +30,7 @@ class Customer
 		DB.exec("UPDATE customers SET name = '#{new_name}' WHERE id = #{@id};")
 	end
 
-	def delete()
+	def delete
 		DB.exec("DELETE FROM customers WHERE id = #{@id};")
 	end
 
