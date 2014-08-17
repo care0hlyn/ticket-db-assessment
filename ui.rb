@@ -9,14 +9,11 @@ DB = PG.connect(:dbname => 'ticket')
 def main_menu
 	puts " \n\n--- KITCHEN TICKET APP---\n\n"
 	puts " '1' for customer menu."
-	puts " '2' for food menu."
 	puts " 'x' to exit program."
 
 	case user_decision = gets.chomp
 	when '1'
 		customer_menu
-	when '2'
-		food_menu
 	when 'x'
 		puts "Goodbye, Alfred."
 		exit
@@ -75,10 +72,7 @@ def order_food
 	order.save
 	Order.ticket(@customer.id, order.id)
 	puts "#{@customer.name}, your order of #{order.food_item} has been placed."
-
-
-
-
+	main_menu
 end
 
 main_menu
