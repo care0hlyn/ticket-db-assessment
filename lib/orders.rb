@@ -23,6 +23,10 @@ class Order
 		orders
 	end
 
+	def add_customer(customer_id)
+		DB.exec("INSERT INTO orders (customer_id, food_order) VALUES (#{@customer_id}, '#{@food_order}');")
+	end
+
 	def save
 		results = DB.exec("INSERT INTO orders (customer_id, food_order) VALUES (#{@customer_id}, '#{@food_order}') RETURNING id;")
 		@id = results.first['id'].to_i

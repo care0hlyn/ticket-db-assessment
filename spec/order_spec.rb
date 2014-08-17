@@ -28,4 +28,14 @@ describe Order do
 		test_order.delete
 		expect(Order.all).to eq []
 	end
+
+	it 'should add a customer to an order in the database' do
+		test_customer = Customer.new({'name' => 'Boo Radley'})
+		test_customer.save
+		test_order = Order.new({'food_order' => 'fried green tomatoes'})
+		test_order.save
+		test_order.add_customer(test_customer)
+		expect(test_order.customer_id).to eq [test_customer]
+	end
+
 end

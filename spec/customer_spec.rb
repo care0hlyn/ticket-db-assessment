@@ -28,4 +28,5 @@ describe Customer do
 		test_customer.delete
 		expect(Customer.all).to eq []
 	end
+
 end
